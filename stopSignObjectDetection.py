@@ -45,6 +45,10 @@ while True:
                 # Put box in cam
                 cv2.rectangle(img, (x1, y1), (x2, y2), (0, 255, 0), 3)  # Green box for stop sign
 
+                # confidence
+                confidence = math.ceil((box.conf[0]*100))/100
+                print("Confidence --->",confidence)
+              
                 # Object details
                 org = (x1, y1 - 10)
                 font = cv2.FONT_HERSHEY_SIMPLEX
